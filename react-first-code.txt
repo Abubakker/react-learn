@@ -1,0 +1,9 @@
+npx create-react-app my-app-namecd (Create with my-app-name folder)
+cd my-app-name
+npm start
+
+
+
+Reactjs code snippets
+rcc for class component
+rsc for functional component or state-less component
