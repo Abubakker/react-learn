@@ -25,8 +25,8 @@ class SignUpForm extends Component {
             }
         }
         if (inputNames === "lname") {
-            var namePattern = /^([a-zA-Z ]){2,30}$/;
-            if (!namePattern.test(inputValues)) {
+            var lnamePattern = /^([a-zA-Z ]){2,30}$/;
+            if (!lnamePattern.test(inputValues)) {
                 this.setState({lname: "Last Name is not valid!"})
             }
         }

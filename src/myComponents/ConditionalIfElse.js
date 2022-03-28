@@ -16,7 +16,7 @@ class ConditionalIfElse extends Component {
 
 
     render() {
-        if (this.state.login == true) {
+        if (this.state.login === true) {
             return <div className=" d-block">
                 <button onClick={this.ConditionalIfElseUpdate.bind(this, false)} className="btn btn-danger my-4">Log
                     out now
