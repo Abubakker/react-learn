@@ -19,6 +19,7 @@ import List from "./myComponents/List";
 import JsonArrayList from "./myComponents/JSONArrayList";
 import StateFuntional from "./myComponents/StateFuntional";
 import Expenses from "./components/Expenses/Expense";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
     return (
@@ -61,6 +62,7 @@ const App = () => {
             <List></List>
             <JsonArrayList></JsonArrayList>
             <StateFuntional></StateFuntional>
+            <NewExpense></NewExpense>
             <Expenses></Expenses>
         </div>
     );
