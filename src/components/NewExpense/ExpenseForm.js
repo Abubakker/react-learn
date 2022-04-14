@@ -3,12 +3,15 @@ import "./NewExpense.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const ExpenseForm = () => {
+    const titleChangeHandler = (event) => {
+        console.log(event.target.value);
+    }
     return (
         <form>
             <div className="new-expense__controls text-start mb-4">
                 <div className="new-expense__control mb-3">
                     <label className="fw-bold">Title</label>
-                    <input className="form-control" type="text"/>
+                    <input className="form-control" type="text" onChange={titleChangeHandler}/>
                 </div>
                 <div className="new-expense__control mb-3">
                     <label className="fw-bold">Amount</label>
