@@ -69,16 +69,16 @@ const ExpenseForm = () => {
             <div className="new-expense__controls text-start mb-4">
                 <div className="new-expense__control mb-3">
                     <label className="fw-bold mb-2">Title</label>
-                    <input className="form-control" type="text" onChange={titleChangeHandler}/>
+                    <input className="form-control" type="text" value={enteredTitle} onChange={titleChangeHandler}/>
                 </div>
                 <div className="new-expense__control mb-3">
                     <label className="fw-bold mb-2">Amount</label>
-                    <input className="form-control" type="number" min="0.01" step="0.01"
+                    <input className="form-control" type="number" min="0.01" step="0.01" value={enteredAmount}
                            onChange={amountChangeHandler}/>
                 </div>
                 <div className="new-expense__control mb-3">
                     <label className="fw-bold mb-2">Date</label>
-                    <input className="form-control" type="date" min="2022-04-14" max="2050-12-31"
+                    <input className="form-control" type="date" min="2022-04-14" max="2050-12-31" value={enteredDate}
                            onChange={dateChangeHandler}/>
                 </div>
             </div>
