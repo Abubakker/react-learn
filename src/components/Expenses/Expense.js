@@ -24,6 +24,11 @@ const Expenses = () => {
         },
     ];
 
+    // const addExpenseHandler = expenses => {
+    //     console.log('asdfasdfasdfasdf');
+    //     console.log(expenses);
+    // }
+
     return (
         <Card className="expenses">
             <ExpenseItem

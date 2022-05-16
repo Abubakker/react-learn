@@ -22,6 +22,10 @@ import Expenses from "./components/Expenses/Expense";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
+    const  addExpenseHandler = expense => {
+        console.log("From app js")
+        console.log(expense)
+    }
     return (
         <div className="App">
             <header className="App-header">
@@ -62,7 +66,7 @@ const App = () => {
             <List></List>
             <JsonArrayList></JsonArrayList>
             <StateFuntional></StateFuntional>
-            <NewExpense></NewExpense>
+            <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
             <Expenses></Expenses>
         </div>
     );
