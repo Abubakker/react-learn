@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Hello from "./myComponents/Hello";
 import Welcome from "./myComponents/Welcome";
@@ -19,17 +19,17 @@ import List from "./myComponents/List";
 import JsonArrayList from "./myComponents/JSONArrayList";
 import StateFuntional from "./myComponents/StateFuntional";
 import Expenses from "./components/Expenses/Expense";
-import NewExpense from "./components/NewExpense/NewExpense";
+// import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
-    const  addExpenseHandler = expense => {
-        console.log("From app js")
-        console.log(expense)
-    }
+    // const  addExpenseHandler = expense => {
+    //     console.log("From app js")
+    //     console.log(expense)
+    // }
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
+                {/*<img src={logo} className="App-logo" alt="logo"/>*/}
                 <p>
                     Hello world !
                 </p>
@@ -66,7 +66,7 @@ const App = () => {
             <List></List>
             <JsonArrayList></JsonArrayList>
             <StateFuntional></StateFuntional>
-            <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+            {/*<NewExpense onAddExpense={addExpenseHandler}></NewExpense>*/}
             <Expenses></Expenses>
         </div>
     );
