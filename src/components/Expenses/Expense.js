@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import ExpenseItem from './ExpenseItem';
+// import ExpenseItem from './ExpenseItem';
 import Card from "../UI/Card";
 import NewExpense from "../NewExpense/NewExpense";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from "./ExpensesList";
 
 const DUMMY_EXPENSES = [
     {
@@ -40,7 +41,6 @@ const Expenses = (props) => {
 
     const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
 
-
     const addExpenseHandler = expenses => {
         // console.log('In expense');
         // console.log(expenses);
@@ -54,25 +54,13 @@ const Expenses = (props) => {
         return expense.date.getFullYear().toString() === filteredYear;
     });
 
-    let expensesNotFoundDataContents = <p>No Expense item found for this year.</p>;
-
-    if(filteredExpenses.length > 0) {
-        expensesNotFoundDataContents = filteredExpenses.map((expense) => (
-            <ExpenseItem
-                key={expense.id}
-                title={expense.title}
-                amount={expense.amount}
-                date={expense.date}
-            />
-        ))
-    }
-
     return (
         <>
             <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
             <Card className="expenses">
                 <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-                {expensesNotFoundDataContents}
+                <ExpensesList expensesList={filteredExpenses}/>
+                {/*{expensesNotFoundDataContents}*/}
                 {/*{filteredExpenses.length === 0 ? (*/}
                 {/*    <p>No Expense item found for this year.</p>) : filteredExpenses.map((expense) => (*/}
                 {/*    <ExpenseItem*/}
