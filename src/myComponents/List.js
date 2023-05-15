@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 
 class List extends Component {
 
-    OptionDataList = (data) => {
-        return <option>{data}</option>
+    OptionDataList = (data, index) => {
+        return <option key={index}>{data}</option>
     }
 
     render() {
