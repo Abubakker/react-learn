@@ -24,6 +24,12 @@ const DUMMY_EXPENSES = [
         amount: 450,
         date: new Date(2021, 5, 12),
     },
+    {
+        id: 'e5',
+        title: 'A book',
+        amount: 33.30,
+        date: new Date(2023, 5, 12),
+    },
 ];
 
 const Expenses = (props) => {
@@ -39,9 +45,26 @@ const Expenses = (props) => {
         // console.log('In expense');
         // console.log(expenses);
 
-        setExpenses((prevExpenses)=> {
+        setExpenses((prevExpenses) => {
             return [expenses, ...prevExpenses];
         });
+    }
+
+    const filteredExpenses = expenses.filter(expense => {
+        return expense.date.getFullYear().toString() === filteredYear;
+    });
+
+    let expensesNotFoundDataContents = <p>No Expense item found for this year.</p>;
+
+    if(filteredExpenses.length > 0) {
+        expensesNotFoundDataContents = filteredExpenses.map((expense) => (
+            <ExpenseItem
+                key={expense.id}
+                title={expense.title}
+                amount={expense.amount}
+                date={expense.date}
+            />
+        ))
     }
 
     return (
@@ -49,14 +72,24 @@ const Expenses = (props) => {
             <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
             <Card className="expenses">
                 <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-                {expenses.map((expense) => (
-                    <ExpenseItem
-                        key={expense.id}
-                        title={expense.title}
-                        amount={expense.amount}
-                        date={expense.date}
-                    />
-                ))}
+                {expensesNotFoundDataContents}
+                {/*{filteredExpenses.length === 0 ? (*/}
+                {/*    <p>No Expense item found for this year.</p>) : filteredExpenses.map((expense) => (*/}
+                {/*    <ExpenseItem*/}
+                {/*        key={expense.id}*/}
+                {/*        title={expense.title}*/}
+                {/*        amount={expense.amount}*/}
+                {/*        date={expense.date}*/}
+                {/*    />*/}
+                {/*))}*/}
+                {/*{expenses.map((expense) => (*/}
+                {/*    <ExpenseItem*/}
+                {/*        key={expense.id}*/}
+                {/*        title={expense.title}*/}
+                {/*        amount={expense.amount}*/}
+                {/*        date={expense.date}*/}
+                {/*    />*/}
+                {/*))}*/}
                 {/*<ExpenseItem*/}
                 {/*    title={expenses[0].title}*/}
                 {/*    amount={expenses[0].amount}*/}
