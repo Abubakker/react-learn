@@ -4,6 +4,7 @@ import Card from "../UI/Card";
 import NewExpense from "../NewExpense/NewExpense";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
+import ExpenseChart from "./ExpenseChart";
 
 const DUMMY_EXPENSES = [
     {
@@ -17,7 +18,7 @@ const DUMMY_EXPENSES = [
         id: 'e3',
         title: 'Car Insurance',
         amount: 294.67,
-        date: new Date(2021, 2, 28),
+        date: new Date(2021, 3, 28),
     },
     {
         id: 'e4',
@@ -29,7 +30,7 @@ const DUMMY_EXPENSES = [
         id: 'e5',
         title: 'A book',
         amount: 33.30,
-        date: new Date(2023, 5, 12),
+        date: new Date(2023, 6, 12),
     },
 ];
 
@@ -59,6 +60,7 @@ const Expenses = (props) => {
             <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
             <Card className="expenses">
                 <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
+                <ExpenseChart expenses={filteredExpenses}/>
                 <ExpensesList expensesList={filteredExpenses}/>
                 {/*{expensesNotFoundDataContents}*/}
                 {/*{filteredExpenses.length === 0 ? (*/}
