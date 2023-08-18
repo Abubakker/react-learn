@@ -36,7 +36,7 @@ const CourseStyling = () => {
     }
 
     return (
-        <div>
+        <div className={'text-start'}>
             <section id="goal-form">
                 <CourseInput onAddGoal={addGoalHandler}/>
             </section>
