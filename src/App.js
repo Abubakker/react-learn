@@ -20,6 +20,7 @@ import JsonArrayList from "./myComponents/JSONArrayList";
 import StateFuntional from "./myComponents/StateFuntional";
 import Expenses from "./components/Expenses/Expense";
 import CourseStyling from "./components/CourseStyling/CourseStyling";
+import Player from "./refs_Portals/Player";
 // import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
@@ -70,6 +71,7 @@ const App = () => {
             {/*<NewExpense onAddExpense={addExpenseHandler}></NewExpense>*/}
             <Expenses></Expenses>
             <CourseStyling/>
+            <Player/>
         </div>
     );
 }
